@@ -1,0 +1,28 @@
+.elementor-element .gform-theme.gform-theme--framework.gform-theme.gform_wrapper {
+  --gf-form-validation-outline-focus: 0;
+  --gf-ctrl-outline-width-focus: 0;
+  --gf-ctrl-btn-bg-color-primary: var(--e-global-color-primary);
+  --gf-form-gap-y: 1rem;
+  --gf-local-font-family: "Avant Garde", sans-serif !important;
+  --gf-local-radius: 0 !important;
+  --gf-ctrl-btn-radius: 0 !important;
+  --gf-ctrl-radius: 0 !important;
+  --gf-ctrl-border-color: rgba(0,0,0,0.1) !important;
+  --gf-ctrl-font-family: "Roboto", sans-serif !important;
+  --gf-ctrl-shadow: 0 !important;
+  --gf-ctrl-border-color-focus: var(--e-global-color-primary) !important;
+  --gf-ctrl-padding-x: 1rem !important;
+  --gf-ctrl-padding-y: 1rem !important;
+  --gf-ctrl-size: 56px !important;
+  --gf-ctrl-btn-bg-color-hover-primary: var(--e-global-color-secondary) !important;
+  --gf-form-validation-shadow: none !important;
+
+  .gform_button {
+    font-size: var(--e-global-typography-d5975d1-font-size) !important;
+    font-weight: var(--e-global-typography-d5975d1-font-weight) !important;
+    line-height: var(--e-global-typography-d5975d1-line-height) !important;
+    fill: var(--e-global-color-primary) !important;
+    color: #fff !important;
+    padding: 1rem 1.5rem !important;
+  }  
+}

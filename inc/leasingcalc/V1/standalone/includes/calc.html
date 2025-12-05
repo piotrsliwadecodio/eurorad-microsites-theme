@@ -1,0 +1,181 @@
+<div id="con_bikes">
+<div id="lur_main_layout" data-calctype="0">
+         <form name="lur_main_form" class="lur_main_form">
+            <div id="lur_content_container">
+               <table id="lur_content">
+                  <tbody>
+                  <tr id="lur_content_ebike" class="lur_content_div">
+                     <td class="lur_content_label">Bike</td>
+						<?php
+
+							$price = 999.99;
+
+						?>
+
+
+                  <td class="lur_content_input_row" colspan="2"><span class="currency_field">€ <input type="number" id="price" min="0" value="<?= $price; ?>"/></span></td>
+                  </tr>
+
+                  <tr id="lur_content_type" class="lur_content_div">
+                     <td class="lur_content_label">Typ</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <select class="lur_type">
+                           <option value="1">Fahrrad</option>
+                           <option value="0"> E-Bike</option>
+                           <option value="2">E-Roller</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_ust" class="lur_content_div">
+                     <td class="lur_content_label">Arbeitgeber ist Umsatzssteuerabzugsberechtigt</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <div id="lur_ust_switch" class="switch opt-yes">
+                           <span id="lur_ust_ja" class="lur_bullet_basic opt-true">Ja</span>
+                           <span id="lur_ust_nein" class="lur_bullet_basic opt-false"> Nein</span>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_gehalt" class="lur_content_div">
+                     <td class="lur_content_label">Bruttogehalt (monatlich)</td>
+                     <td class="lur_content_input_row" colspan="2"><span class="currency_field">€ <input type="number" step="0.50" min="0" name="bruttolohn" id="lur_bruttolohn"/></span></td>
+                  </tr>
+                  <tr id="lur_content_employersshare" class="lur_content_div">
+                     <td class="lur_content_label">Arbeitgeberanteil (Brutto)</td>
+                     <td class="lur_content_input_row" colspan="2"><span class="currency_field">€ <input type="number" id="lur_employersshare" min="0" value="0"/></span></td>
+                  </tr>
+                  <tr id="lur_content_steuklasse" class="lur_content_div">
+                     <td class="lur_content_label">Steuerklasse</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <select id="lur_steuerklasse">
+                           <option value="1">Klasse I</option>
+                           <option value="2">Klasse II</option>
+                           <option value="3">Klasse III</option>
+                           <option value="4">Klasse IV ohne Faktorverfahren</option>
+                           <option value="5">Klasse IV mit Faktorverfahren</option>
+                           <option value="6">Klasse V</option>
+                           <option value="7">Klasse VI</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_faktor" class="lur_content_div">
+                     <td class="lur_content_label">Faktor</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <input type="number" step="0.001" max="1" name="faktor" id="lur_faktor">
+                     </td>
+                  </tr>
+                  <tr id="lur_content_kirche" class="lur_content_div">
+                     <td class="lur_content_label">Kirchensteuerpflicht</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <div id="lur_kirche_switch" class="switch opt-yes">
+                           <span id="lur_kirche_ja" class="lur_bullet_basic opt-true">Ja</span>
+                           <span id="lur_kirche_nein" class="lur_bullet_basic opt-false"> Nein</span>
+                        </div>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_bula" class="lur_content_div connectToAbove">
+                     <td class="lur_content_label">Bundesland</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <select name="in_bundesland" id="lur_bundesland">
+                           <option value="WAHL">bitte Bundesland wählen</option>
+                           <option value="BW">Baden-Württemberg</option>
+                           <option value="BAYERN">Bayern</option>
+                           <option value="BERLIN">Berlin</option>
+                           <option value="BRANDENBURG">Brandenburg</option>
+                           <option value="BREMEN">Bremen</option>
+                           <option value="HH">Hamburg</option>
+                           <option value="HESSEN">Hessen</option>
+                           <option value="MECKLENBURG">Mecklenburg-Vorpommern</option>
+                           <option value="NIEDERSACHSEN">Niedersachsen</option>
+                           <option value="NRW">Nordrhein-Westfalen</option>
+                           <option value="RP">Rheinland-Pfalz</option>
+                           <option value="SAARLAND">Saarland</option>
+                           <option value="SACHSEN">Sachsen</option>
+                           <option value="SA">Sachsen-Anhalt</option>
+                           <option value="SH">Schleswig-Holstein</option>
+                           <option value="TH">Thüringen</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_kraka" class="lur_content_div">
+                     <td class="lur_content_label">Krankenkasse</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <select name="krankenkasse" id="lur_krankenkasse">
+                           <option value="1">gesetzliche Krankenversicherung</option>
+                           <option value="2">private Krankenversicherung ohne Arbeitgeberzuschuss</option>
+                           <option value="3">private Krankenversicherung mit Arbeitgeberzuschuss</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <!--tr id="lur_content_ankraka" class="lur_content_div connectToAbove">
+                     <td class="lur_content_label">Arbeitnehmerbeitrag<br>zur privaten <br>Krankenkasse</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <input type="number" id="lur_priv_kassenbeitrag" min="0" value="0">
+                     </td>
+                  </tr-->
+                  <tr id="lur_content_kassensatz" class="lur_content_div">
+                     <td class="lur_content_label">Kassensatz<br>(nur gesetzl.)</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <input type="number" min="0" max="50" step="0.01" value="15.5" name="lur_kassensatz">
+                     </td>
+                  </tr>
+                  <tr id="lur_content_rente" class="lur_content_div">
+                     <td class="lur_content_label">Rentenversicherungs-<br>pflicht des Mitarbeiters</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <select class="lur_rente">
+                           <option value="0">Ja (West)</option>
+                           <option value="1"> Ja (Ost)</option>
+                           <option value="2"> Nein</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr id="lur_content_kinder" class="lur_content_div">
+                     <td class="lur_content_label">Haben Sie Kinder?</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <div id="lur_kinder_switch" class="switch">
+                           <span class="lur_bullet_basic opt-true" id="lur_kinder_ja">Ja</span>
+                           <span class="lur_bullet_basic opt-false" id="lur_kinder_nein">Nein</span>
+                        </div>
+                     </td>
+                  </tr>
+
+                  <tr id="lur_content_anzkinder" class="lur_content_div connectToAbove">
+                     <td class="lur_content_label">zahl der Kinderfreibeträge</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <input type="number" value="0" max="15" min="0" step="0.5" id="lur_kinder">
+                     </td>
+                  </tr>
+                  <tr id="lur_content_gebjahr" class="lur_content_div">
+                     <td class="lur_content_label">Eigenes Geburtsjahr</td>
+                     <td class="lur_content_input_row" colspan="2">
+                        <input type="number" max="2050" min="1900" id="lur_gebjahr" pattern="\d*"/>
+                     </td>
+                  </tr>
+                  <tr>
+			         <td id="lur_ergebnis_regulaer" class="lur_content_label lur_footer" colspan="2">
+			            Regulärer Brutto-Leasingpreis pro Monat* (inkl. <a title="Rundumschutz" href="?id=11">Rundumschutz</a>):
+			         </td>
+		            <td id="lur_leasing_monat" class="lur_footer lur_footer_erg">-- €/mtl.</td>
+		          </tr>
+		          <tr>
+			         <td id="lur_ergebnis_leasing" class="lur_content_label lur_footer" colspan="2">
+			            Effektiver Leasingpreis durch Gehaltsumwandlung (inkl. <a title="Rundumschutz" href="?id=11">Rundumschutz</a>):
+			         </td>
+			         <td id="lur_leasing_umlage" class="lur_footer lur_footer_erg">-- €/mtl.</td>
+			      </tr>
+		          <tr>
+			         <td id="lur_ersparnis_monat" class="lur_content_label lur_footer ersparnis" colspan="3">
+			            <div class="quarter first"><span>%</span> ERSPARNIS: </div>
+                     <div class="quarter">pro Monat: <span id="lur_ersparnis_mtl">-- €</span></div>
+                     <div class="quarter">in 36 Monaten: <span id="lur_ersparnis_abs">-- €</span></div>
+                     <div class="quarter">in Prozent: <span id="lur_ersparnis_proz">-- %</span></div>
+			         </td>
+		         </tr>
+
+                  <tr class="whiterow"><td colspan="3">(Unverbindliches Kalkulationsbeispiel. Bitte wenden Sie sich an Ihren Steuerberater zur Überprüfung)<br>
+                     * bei einer Laufzeit von 36 Monaten </td></tr>
+               </tbody></table>
+            </div>
+         </form>
+         <div id="debugtable"></div>
+      </div>
+</div>

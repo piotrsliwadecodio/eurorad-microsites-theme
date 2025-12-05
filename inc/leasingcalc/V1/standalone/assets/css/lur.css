@@ -1,0 +1,465 @@
+.lur_leasing_monat {
+  display: inline-block;
+  width: 50px;
+}
+
+#show-tables {
+  margin-top: 50px;
+}
+
+@media only print {
+  .page-template-template-rechner #headline {
+    display: none;
+  }
+  .page-template-template-rechner #footer {
+    margin-top: 0px !important;
+  }
+  .page-template-template-rechner #show-tables {
+    display: none;
+  }
+  .page-template-template-rechner #calculation-tables {
+    margin-top: 50px;
+  }
+  .page-template-template-rechner #calculation-tables:before {
+    content: 'Komplette Rechnung';
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+    text-align: center;
+  }
+  .page-template-template-rechner .rechner .vc_span4 {
+    display: none;
+  }
+}
+@media only screen {
+  #calculation-tables {
+    height: 0px;
+    overflow: hidden;
+  }
+  #calculation-tables.active {
+    height: auto;
+  }
+  #calculation-tables .collapsed {
+    display: none;
+  }
+  #calculation-tables .collapsed.active {
+    display: block;
+  }
+}
+#calculation-tables {
+  -moz-transition: all 250ms ease-out 0s;
+  -webkit-transition: all 250ms ease-out 0s;
+  -o-transition: all 250ms ease-out 0s;
+  -ms-transition: all 250ms ease-out 0s;
+  transition: all 250ms ease-out 0s;
+  position: relative;
+  width: 100%;
+}
+#calculation-tables > table {
+  border-left: 1px solid #f7f7f7;
+  border-right: 1px solid #f7f7f7;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+}
+#calculation-tables > table:first-child {
+  margin-top: 0px;
+}
+#calculation-tables > table:last-child {
+  margin-bottom: 50px;
+}
+#calculation-tables table {
+  width: 100%;
+}
+#calculation-tables thead tr {
+  font-family: AkagiPro-Bold, Helvetica, Arial, sans-serif;
+  background: #eee;
+}
+#calculation-tables thead th {
+  font-weight: bold;
+}
+#calculation-tables th, #calculation-tables td {
+  padding: 5px;
+}
+#calculation-tables th.table-wrapper, #calculation-tables td.table-wrapper {
+  padding: 0px;
+}
+#calculation-tables th.table-wrapper:first-child, #calculation-tables td.table-wrapper:first-child {
+  padding-left: 30px;
+}
+#calculation-tables th,
+#calculation-tables td {
+  border-bottom: 1px solid #f7f7f7;
+  text-align: right;
+  width: 90px;
+}
+#calculation-tables th:nth-child(1),
+#calculation-tables td:nth-child(1) {
+  text-align: left;
+  width: auto;
+}
+#calculation-tables tr.result {
+  background: #f7f7f7;
+}
+#calculation-tables tr.result.end {
+  font-family: AkagiPro-Bold, Helvetica, Arial, sans-serif;
+}
+#calculation-tables tr.result.end td {
+  border-bottom: 0px;
+  border-top: 1px solid #ccc;
+}
+#calculation-tables tr.result.end + .end td {
+  border-top: 0px solid #ccc;
+}
+#calculation-tables a.skyblue.small {
+  padding: 1px 7px;
+  font-size: 20px;
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+.lur_leasing_monat_brutto-brutto {
+  display: none;
+}
+
+.with-ust .lur_leasing_monat_brutto-netto {
+  display: none;
+}
+.with-ust .lur_leasing_monat_brutto-brutto {
+  display: block;
+}
+
+.lur_popout {
+  display: none;
+  position: absolute;
+  background-color: #fffcf7;
+  padding: 20px;
+  margin-left: 420px;
+  margin-top: -350px;
+  width: 500px;
+  z-index: 9999;
+  line-height: 18px;
+  -webkit-box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+  -moz-box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+  box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+}
+
+.lur_open_popout {
+  white-space: nowrap;
+}
+
+.whiterow .info {
+  padding: 10px 0px;
+}
+.whiterow .info p {
+  font-size: 12px;
+  line-height: 17px;
+  margin-bottom: 0px;
+}
+.whiterow .info p + p {
+  margin-top: 10px;
+}
+
+#lur_popout-5,
+#lur_popout-3 {
+  margin: 0px;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.lur_popout ul {
+  list-style: square;
+  padding-left: 30px;
+}
+
+.lur_popout li {
+  line-height: 10px;
+}
+
+a.lur_open_popout:hover + .lur_popout {
+  display: block;
+}
+
+.lur_popout_small {
+  font-size: 10px;
+  display: block;
+  line-height: 12px;
+}
+
+span.lur_popout_bold {
+  font-weight: 900;
+  color: #ef7d00;
+}
+
+#lur_main_layout {
+  border: solid 0px black;
+}
+#lur_main_layout #lur_header {
+  padding: 0px 0px 10px;
+}
+#lur_main_layout #lur_header_text {
+  display: block;
+  padding-top: 5px;
+  font-size: 14px;
+}
+#lur_main_layout #lur_content_container {
+  text-align: center;
+  size: 12px;
+}
+#lur_main_layout #lur_content {
+  background-color: #fff;
+  margin-bottom: 1px;
+  margin: 0px;
+  text-align: left;
+}
+#lur_main_layout .lur_content_div {
+  color: #838383;
+  vertical-align: middle;
+  text-align: left;
+  border-collapse: collapse !important;
+  border-spacing: 0px !important;
+  padding: 0px;
+}
+#lur_main_layout .lur_content_div td {
+  border-collapse: collapse !important;
+  border-spacing: 0px !important;
+  border: none;
+  padding: 5px 10px 5px 7px;
+  position: relative;
+  vertical-align: middle;
+}
+#lur_main_layout .lur_content_div.connectToAbove td {
+  background: #fff;
+}
+#lur_main_layout #lur_content_ebike {
+  color: #6992b5;
+  font-weight: bold;
+}
+#lur_main_layout .lur_content_label {
+  width: 50%;
+  padding-left: 15px;
+}
+#lur_main_layout .lur_content_input_row {
+  width: 50%;
+  text-align: right;
+  line-height: 29px;
+}
+#lur_main_layout .lur_content_input_row > select,
+#lur_main_layout input {
+  width: 90%;
+  height: 25px;
+  padding: 0px 5px;
+  text-align: right;
+  float: right;
+  margin: 2px 0px;
+  display: inline-block;
+}
+#lur_main_layout .lur_content_input_row > select {
+  padding: 0;
+}
+#lur_main_layout .lur_content_row td {
+  text-align: right;
+}
+#lur_main_layout #lur_content_faktor {
+  display: none;
+}
+#lur_main_layout .switch {
+  background: #afafaf;
+  border-radius: 5px;
+  height: 26px;
+  width: 75px;
+  float: right;
+}
+#lur_main_layout .switch span {
+  float: left;
+}
+#lur_main_layout .switch.opt-yes .opt-false,
+#lur_main_layout .switch .opt-true {
+  height: 20px;
+  width: 20px;
+  font-size: 0px;
+  text-indent: -3000px;
+  border-radius: 3px;
+  background: #ffffff;
+  margin: 3px;
+  cursor: default;
+}
+#lur_main_layout .switch .opt-false,
+#lur_main_layout .switch.opt-yes .opt-true {
+  cursor: pointer;
+  width: 49px;
+  line-height: 24px;
+  vertical-align: middle;
+  display: block;
+  text-align: left;
+  height: 24px;
+  color: white;
+  line-height: 28px;
+  text-align: center;
+  font-size: inherit;
+  text-indent: 0px;
+  border-radius: 0px;
+  background: none;
+  margin: 0px;
+}
+#lur_main_layout .switch.opt-yes {
+  background: #6791b6;
+}
+#lur_main_layout #lur_content_ebike td {
+  background: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+}
+#lur_main_layout .lur_footer {
+  background-color: #edf2f6;
+  height: 25px;
+  line-height: 19px;
+  vertical-align: middle;
+  padding: 20px 10px;
+  margin: 0px 0px;
+}
+#lur_main_layout .luf_footer_strong,
+#lur_main_layout .lur_footer strong {
+  font-family: AkagiPro-Bold;
+  font-weight: normal;
+}
+#lur_main_layout .lur_footer_1 {
+  background-color: #f8f8f8;
+}
+#lur_main_layout .lur_footer.lur_content_label {
+  width: 75%;
+}
+#lur_main_layout .lur_footer.lur_footer_erg {
+  width: 25%;
+}
+#lur_main_layout .ersparnis {
+  background: #f8f8f8;
+  font-size: 0px;
+}
+#lur_main_layout .ersparnis .half {
+  font-size: 14px;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: middle;
+  text-align: right;
+  width: 30%;
+}
+#lur_main_layout .ersparnis .first.half {
+  text-align: left;
+  margin: 0px;
+  width: 70%;
+}
+#lur_main_layout .ersparnis .first.half strong {
+  font-family: AkagiPro-Bold;
+  color: #6891b7;
+}
+#lur_main_layout #lur_ersparnis_proz {
+  color: #6891b7;
+}
+#lur_main_layout .ersparnis .first.half span {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  background: #6891b7;
+  border-radius: 15px;
+  line-height: 27px;
+  text-align: center;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  font-family: AkagiPro-Light;
+  font-size: 18px;
+}
+#lur_main_layout .ersparnis div {
+  text-align: right;
+}
+#lur_main_layout .lur_ersparnis_monat {
+  color: #6992b5;
+  font-weight: bold;
+}
+#lur_main_layout .lur_footer_erg {
+  text-align: right;
+}
+#lur_main_layout #lur_cur_bike_price {
+  float: right;
+  padding-right: 15px;
+}
+#lur_main_layout #lur_content_kassensatz,
+#lur_main_layout #lur_content_anzkinder,
+#lur_main_layout #lur_content_ankraka {
+  display: none;
+}
+#lur_main_layout #lur_content_button td {
+  height: 37px;
+}
+#lur_main_layout #lur_content_button td a.action-button {
+  margin-left: -2px;
+}
+#lur_main_layout #btn-drucken {
+  background: url(img/print_icon.png) no-repeat;
+  float: left;
+  width: 34px;
+  height: 34px;
+  padding-left: 40px;
+  line-height: 34px;
+  font-size: 20px;
+  color: #55534E;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+#debugtable table {
+  width: 50%;
+  float: left;
+}
+#debugtable table td:first-child {
+  width: 75%;
+}
+#debugtable table td {
+  height: 35px;
+  line-height: 20px;
+}
+#debugtable table td, #debugtable table tr {
+  height: 20px;
+  padding: 3px 5px;
+}
+#debugtable .headrow {
+  background: #ccc;
+  font-weight: bold;
+}
+#debugtable .headrow2 {
+  background: #eee;
+  font-weight: bold;
+}
+#debugtable .headrow1 {
+  background: #aaa;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #lur_main_layout .lur_main_form {
+    float: none;
+  }
+}
+
+/*# sourceMappingURL=lur.css.map */

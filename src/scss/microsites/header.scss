@@ -1,0 +1,219 @@
+.er-microsite-header {
+  position: relative;
+  z-index: 100;
+  
+  &__main {
+    padding: 1.5rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rem solid var(--color-primary);
+
+    @media (max-width: 1400px) {
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  .er-microsite-logo {
+    max-width: 200px;
+    max-height: 100px;
+
+    @media (max-width: 1200px) {
+      max-width: 150px;
+      max-height: 75px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100px;
+      max-height: 50px;
+    }
+
+    img {
+      max-width: 200px;
+      max-height: 100px;
+      object-fit: contain;
+      @media (max-width: 1200px) {
+        max-width: 150px;
+        max-height: 75px;
+      }
+      @media (max-width: 768px) {
+        max-width: 100px;
+        max-height: 50px;
+      }
+    }
+  }
+
+  .er-microsite-branding {
+    display: flex;
+    align-items: center;
+    @media (max-width: 768px) {
+      padding-right: 50px;
+    }
+  }
+
+  .er-microsite-branding-text {
+    padding-left: 1rem;
+    border-left: 1px solid #e5e5e5d0;
+    margin-left: 1rem;
+    color: var(--color-black);
+  }
+
+  .er-microsite-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--color-black);
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .er-microsite-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--color-black);
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  .er-site-navigation {
+
+    @media (max-width: 1200px) {
+      margin-left: -0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+
+      &.active {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .menu {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 0.5rem;
+        font-size: .875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          border-bottom-color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 8%;
+    background: #191919BF;
+    color: #fff;
+    font-size: 14px;
+
+    .er-top-links {
+      margin-left: -0.5rem;
+    }
+
+    .er-top-links,
+    .er-socailfollow {
+
+      a {
+        padding-inline: 0.5rem;
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .er-microsite-header-dienstrad-tool {
+    background: #e1e1e1;
+    width: 100%;
+    padding: 0.5rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    @media (max-width: 1400px) {
+      padding: 0.5rem 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .er-dropdown {
+      min-width: 0;
+      .er-dropdown-title {
+       padding: 0.5rem 1rem !important;
+      }
+
+      .er-dropdown-dropdown {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .er-microsite-menu-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--color-black);
+      transition: 0.4s;
+    }
+  }
+}
+

@@ -1,0 +1,908 @@
+@mixin transition(
+  $property,
+  $duration: 250ms,
+  $timingfunc: ease-out,
+  $delay: 0s
+) {
+  -moz-transition: $property $duration $timingfunc $delay;
+  -webkit-transition: $property $duration $timingfunc $delay;
+  -o-transition: $property $duration $timingfunc $delay;
+  -ms-transition: $property $duration $timingfunc $delay;
+  transition: $property $duration $timingfunc $delay;
+}
+
+#show-tables {
+  margin-top: 50px;
+}
+
+@media only print {
+  .page-template-template-rechner {
+    #headline {
+      display: none;
+    }
+
+    #footer {
+      margin-top: 0px !important;
+    }
+
+    #show-tables {
+      display: none;
+    }
+
+    #calculation-tables {
+      margin-top: 50px;
+
+      &:before {
+        content: "Komplette Rechnung";
+        font-size: 35px;
+        line-height: 45px;
+        margin-bottom: 15px;
+        margin-top: 20px;
+        font-weight: 400;
+        letter-spacing: -0.06em;
+        text-align: center;
+      }
+    }
+
+    .rechner {
+      .vc_span4 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen {
+  #calculation-tables {
+    height: 0px;
+    overflow: hidden;
+
+    &.active {
+      height: auto;
+    }
+
+    .collapsed {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+#calculation-tables {
+  @include transition(all);
+  position: relative;
+  width: 100%;
+
+  > table {
+    border-left: 1px solid #f7f7f7;
+    border-right: 1px solid #f7f7f7;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+    &:last-child {
+      margin-bottom: 50px;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  thead {
+    tr {
+      font-family: AkagiPro-Bold, Helvetica, Arial, sans-serif;
+      background: #eee;
+    }
+    th {
+      font-weight: bold;
+    }
+  }
+
+  th,
+  td {
+    padding: 5px;
+
+    &.table-wrapper {
+      padding: 0px;
+
+      &:first-child {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid #f7f7f7;
+    text-align: right;
+    width: 90px;
+
+    &:nth-child(1) {
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  tr {
+    &.result {
+      background: #f7f7f7;
+
+      &.end {
+        // color: #333;
+        font-family: AkagiPro-Bold, Helvetica, Arial, sans-serif;
+
+        td {
+          border-bottom: 0px;
+          border-top: 1px solid #ccc;
+        }
+
+        & + .end td {
+          border-top: 0px solid #ccc;
+        }
+      }
+    }
+  }
+
+  a.skyblue.small {
+    padding: 1px 7px;
+    font-size: 20px;
+    margin-right: 5px;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  #lur_main_layout {
+    .ersparnis .half {
+      float: right;
+
+      &.first {
+        float: left;
+      }
+    }
+  }
+}
+
+#lur_main_layout {
+  border: solid 0px black;
+
+  .insurance-table {
+    margin-top: 0px;
+  }
+
+  .vergleich_verspraemie {
+    thead {
+      th {
+        background: #f2a663;
+      }
+    }
+
+    th,
+    td {
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  &.with-ust {
+    .lur_leasing_monat_brutto-netto {
+      display: none;
+    }
+
+    .lur_leasing_monat_brutto-brutto {
+      display: block;
+    }
+  }
+
+  &.jahr2017 {
+    .row2018 {
+      display: none;
+    }
+  }
+
+  &.jahr2018 {
+    .row2017 {
+      display: none;
+    }
+  }
+
+  .wording_beamte {
+    display: none;
+  }
+
+  &.set_wording_beamte {
+    .wording_beamte {
+      display: inline;
+    }
+
+    .wording_normal {
+      display: none;
+    }
+  }
+
+  .lur_content {
+    &_paket {
+      display: none;
+    }
+  }
+
+  &.paket-basis {
+    strong.lur_content_paket-basis,
+    span.lur_content_paket-basis {
+      display: inline;
+    }
+
+    div.lur_content_paket-basis {
+      display: block;
+    }
+  }
+
+  &.paket-premium {
+    strong.lur_content_paket-premium,
+    span.lur_content_paket-premium {
+      display: inline;
+    }
+
+    div.lur_content_paket-premium {
+      display: block;
+    }
+  }
+
+  &.paket-premiumPlus {
+    strong.lur_content_paket-premiumPlus,
+    span.lur_content_paket-premiumPlus {
+      display: inline;
+    }
+
+    div.lur_content_paket-premiumPlus {
+      display: block;
+    }
+  }
+
+  &.paket-premiumPlusOV {
+    strong.lur_content_paket-premiumPlusOV,
+    span.lur_content_paket-premiumPlusOV {
+      display: inline;
+    }
+
+    div.lur_content_paket-premiumPlusOV {
+      display: block;
+    }
+  }
+
+  &.paket-alt {
+    strong.lur_content_paket-alt,
+    span.lur_content_paket-alt {
+      display: inline;
+    }
+
+    div.lur_content_paket-alt {
+      display: block;
+    }
+  }
+
+  .lur_content {
+    &_heading {
+      background: #f8f8f8;
+      padding: 10px;
+      text-align: left;
+    }
+
+    &_container {
+      border: 1px solid #f8f8f8;
+      padding: 10px;
+    }
+
+    &_col {
+      display: inline-block;
+      width: 170px;
+      vertical-align: top;
+      padding: 0px 0px 0px 10px;
+      line-height: 20px;
+      text-align: center;
+      position: relative;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+        width: 100%;
+        padding: 5px 0px;
+        font-size: 0px;
+      }
+
+      &_label {
+        display: none;
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+          display: inline-block;
+          vertical-align: middle;
+          width: 150px;
+          text-align: left;
+          box-sizing: border-box;
+          padding-right: 10px;
+        }
+
+        & + .currency_field,
+        & + select,
+        & + input {
+          font-size: 14px;
+
+          @media (max-width: 768px) {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - 150px);
+          }
+        }
+      }
+    }
+
+    &_row {
+      position: relative;
+
+      &_head {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      &_add,
+      &_bike {
+        border-top: 1px solid #f8f8f8;
+        margin-top: 10px;
+        padding-top: 10px;
+
+        & + .lur_content_row_bike {
+          @media (max-width: 768px) {
+            padding-bottom: 35px;
+          }
+
+          .lur_remove_bike_wrap {
+            display: inline-block;
+          }
+        }
+
+        .lur_remove_bike_wrap {
+          display: none;
+
+          @media (max-width: 768px) {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+          }
+        }
+
+        .button_wrap {
+          font-size: 12px;
+          color: #ccc;
+        }
+
+        .button {
+          margin: 0px 0px 0px 5px;
+        }
+      }
+    }
+  }
+
+  #lur_content_ebike {
+    font-weight: bold;
+
+    td {
+      padding: 0px;
+    }
+  }
+
+  .lur_leasing_monat {
+    display: inline-block;
+    width: 60px;
+  }
+
+  .lur_leasing_monat_brutto-brutto {
+    display: none;
+  }
+
+  .lur_popout {
+    transition: transform 300ms ease-out, opacity 300ms ease-out;
+    transform: translate(20px);
+    opacity: 0;
+    position: fixed;
+    max-width: 500px;
+    width: 100vw;
+    box-sizing: border-box;
+    max-height: calc(100% - 130px);
+    bottom: 0px;
+    right: 0;
+    // right: -100%;
+    background-color: #fffcf7;
+    z-index: 999999;
+    line-height: 18px;
+    -webkit-box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+    -moz-box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+    box-shadow: 0px 0px 25px 4px rgba(102, 102, 102, 0.15);
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    color: #666e74;
+    border: 5px solid #f2a663;
+    text-align: left;
+    cursor: default;
+
+    .close {
+      // position: absolute;
+      display: block;
+      text-align: right;
+      // top: 0;
+      // right: 0;
+      padding: 28px 21px;
+      color: #ef7d00;
+      font-size: 15px;
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    &.active {
+      right: 0;
+      transform: translate(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &_container {
+      box-sizing: border-box;
+      padding: 20px 20px 20px;
+      overflow: auto;
+      max-height: calc(100%);
+      width: 100%;
+    }
+  }
+
+  .vergleich_emie {
+    thead th {
+      padding: 10px 10px;
+      background: #f2a663;
+      color: white;
+      border-top: 0px;
+    }
+
+    th,
+    td {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 4px 10px;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    .additional {
+      th,
+      td {
+        border-top: 2px solid rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td {
+      max-width: 180px;
+    }
+  }
+
+  .lur_open_popout {
+    position: relative;
+    display: inline-block;
+  }
+
+  .lur_popout ul {
+    list-style: square;
+    padding-left: 30px;
+  }
+
+  .lur_popout li {
+    line-height: 20px;
+    margin-bottom: 0px;
+  }
+
+  .lur_popout_small {
+    font-size: 10px;
+    display: block;
+    line-height: 12px;
+  }
+
+  span.lur_popout_bold {
+    font-weight: 900;
+    color: #ef7d00;
+  }
+
+  .whiterow {
+    .info {
+      padding: 10px 0px;
+
+      p {
+        font-size: 12px;
+        line-height: 17px;
+        margin-bottom: 0px;
+
+        & + p {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  #lur_popout-5,
+  #lur_popout-6,
+  #lur_popout-3 {
+    margin: 0px;
+  }
+
+  #lur_popout-0 {
+    margin-left: 0px;
+    margin-top: 50px;
+    top: 0;
+    left: 0;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+
+  /* RECHNER */
+
+  .rechner .wpb_content_element {
+    margin: 10px;
+    margin: 10px 0px 0px;
+  }
+
+  input.disabled-input {
+    background: #f9f9f9;
+    /*color: #aaa;*/
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  .page-template-template-rechner-php .vc_span8.wpb_column.column_container {
+    padding-right: 30px;
+  }
+
+  #lur_header {
+    padding: 0px 0px 10px;
+  }
+
+  #lur_header_title {
+  }
+
+  #lur_header_text {
+    display: block;
+    padding-top: 5px;
+    font-size: 14px;
+  }
+
+  #lur_content_container {
+    text-align: center;
+    size: 12px;
+  }
+
+  #lur_content {
+    background-color: #fff;
+    margin-bottom: 1px;
+    margin: 0px;
+    text-align: left;
+  }
+
+  .currency_field {
+    position: relative;
+    white-space: nowrap;
+    line-height: 26px;
+
+    &_symbol {
+      position: absolute;
+      left: 4px;
+      top: 2px;
+    }
+  }
+
+  .lur_content_div {
+    color: #838383;
+    vertical-align: middle;
+    text-align: left;
+    border-collapse: collapse !important;
+    border-spacing: 0px !important;
+    padding: 0px;
+  }
+
+  .lur_content_div > td {
+    border-collapse: collapse !important;
+    border-spacing: 0px !important;
+    border: none;
+    padding: 5px 10px 5px 7px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .lur_content_div.connectToAbove td {
+    background: #fff;
+  }
+
+  .lur_content_label {
+    width: 50%;
+    padding-left: 15px;
+  }
+
+  .lur_content_input_row {
+    width: 50%;
+    text-align: right;
+    line-height: 29px;
+  }
+
+  select,
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 0px 5px;
+    text-align: right;
+    margin: 2px 0px;
+    display: inline-block;
+  }
+
+  select {
+    padding: 0;
+    text-align: left;
+  }
+
+  .lur_content_input_row > select.error,
+  input.error {
+    border-color: red;
+  }
+
+  .switch {
+  }
+
+  .lur_content_row td {
+    text-align: right;
+  }
+
+  #lur_content_faktor {
+    display: none;
+  }
+
+  .switch {
+    background: #afafaf;
+    border-radius: 5px;
+    height: 26px;
+    width: 75px;
+    float: right;
+  }
+
+  .switch span {
+    float: left;
+  }
+
+  .switch.opt-yes .opt-false,
+  .switch .opt-true {
+    height: 20px;
+    width: 20px;
+    font-size: 0px;
+    text-indent: -3000px;
+    border-radius: 3px;
+    background: #ffffff;
+    margin: 3px;
+    cursor: default;
+  }
+
+  .switch .opt-false,
+  .switch.opt-yes .opt-true {
+    cursor: pointer;
+    width: 49px;
+    line-height: 24px;
+    vertical-align: middle;
+    display: block;
+    text-align: left;
+    height: 24px;
+    color: white;
+    line-height: 28px;
+    text-align: center;
+    font-size: inherit;
+    text-indent: 0px;
+    border-radius: 0px;
+    background: none;
+    margin: 0px;
+  }
+
+  .switch.opt-yes {
+    // background: #6791b6;
+  }
+
+  .lur_footer {
+    background-color: #edf2f6;
+    height: 25px;
+    line-height: 19px;
+    vertical-align: middle;
+    padding: 20px 10px;
+    margin: 0px 0px;
+  }
+
+  .employersshare-minus .lur_footer,
+  .versRow .lur_footer {
+    padding: 7px 10px;
+  }
+
+  .luf_footer_strong,
+  .lur_footer strong {
+    font-family: AkagiPro-Bold;
+    font-weight: normal;
+  }
+
+  .lur_footer_1 {
+    background-color: #f8f8f8;
+  }
+
+  .lur_footer.lur_content_label {
+    width: 75%;
+  }
+
+  .lur_footer.lur_footer_erg {
+    width: 25%;
+  }
+
+  .ersparnis {
+    background: #f8f8f8;
+    font-size: 0px;
+  }
+
+  .ersparnis .half {
+    font-size: 14px;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+    text-align: right;
+    width: 30%;
+  }
+
+  .ersparnis .first.half {
+    // float: left;
+    text-align: left;
+    margin: 0px;
+    width: 70%;
+  }
+
+  .ersparnis .first.half strong {
+    font-family: AkagiPro-Bold;
+    // color: #6891b7;
+  }
+
+  #lur_ersparnis_proz {
+    // color: #6891b7;
+  }
+
+  .ersparnis .first.half span {
+    // width:24px;
+    // height:24px;
+    // color:#fff;
+    // background:#6891b7;
+    // border-radius: 15px;
+    // line-height: 27px;
+    // text-align: center;
+    // display: block;
+    // float: left;
+    // margin-right:5px;
+    // font-family: AkagiPro-Light;
+    // font-size: 18px
+  }
+
+  .ersparnis div {
+    text-align: right;
+  }
+
+  .lur_ersparnis_monat {
+    color: #6992b5;
+    font-weight: bold;
+  }
+
+  .lur_main_form {
+    // float: left;
+  }
+
+  .lur_footer_erg {
+    text-align: right;
+  }
+
+  #lur_cur_bike_price {
+    float: right;
+    padding-right: 15px;
+  }
+
+  #lur_content_kassensatz,
+  #lur_content_anzkinder,
+  #lur_content_anzkinder_2,
+  #lur_content_ankraka {
+    display: none;
+  }
+
+  #lur_content_button td {
+    height: 37px;
+  }
+  #lur_content_button td a.action-button {
+    margin-left: -2px;
+  }
+
+  #btn-drucken {
+    background: url(img/print_icon.png) no-repeat;
+    float: left;
+    width: 34px;
+    height: 34px;
+    padding-left: 40px;
+    line-height: 34px;
+    font-size: 20px;
+    color: #55534e;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+}
+
+#debugtable {
+  table {
+    width: 50%;
+    float: left;
+
+    td:first-child {
+      width: 75%;
+    }
+
+    td {
+      height: 35px;
+      line-height: 20px;
+    }
+
+    td,
+    tr {
+      height: 20px;
+      padding: 3px 5px;
+    }
+  }
+
+  .headrow {
+    background: #ccc;
+    font-weight: bold;
+  }
+
+  .headrow2 {
+    background: #eee;
+    font-weight: bold;
+  }
+
+  .headrow1 {
+    background: #aaa;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  #lur_main_layout .lur_main_form {
+    float: none;
+  }
+}
+
+.employersshare-minus {
+  display: none;
+  opacity: 0.7;
+}

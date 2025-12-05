@@ -1,0 +1,254 @@
+.icon-color-primary {
+
+  .elementor-icon {
+    fill: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+  }
+}
+.icon-color-secondary {
+
+  .elementor-icon,
+  .elementor-icon-box-title {
+    fill: var(--color-secondary) !important;
+    color: var(--color-secondary) !important;
+  }
+}
+
+.background-color-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.background-color-secondary {
+  background-color: var(--color-secondary) !important;
+}
+
+.text-color-primary {
+  color: var(--color-primary) !important;
+
+  .elementor-heading-title,
+  .elementor-icon-box-title {
+    color: var(--color-primary) !important;
+  }
+}
+
+.text-color-secondary {
+  color: var(--color-secondary) !important;
+
+  .elementor-heading-title {
+    color: var(--color-secondary) !important;
+  }
+}
+
+.table-bg-color-primary .elementor-widget-container {
+  background-color: var(--color-primary) !important;
+}
+
+.table-bg-color-primary-80 {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary) !important;
+    opacity: 0.8;
+  }
+}
+
+.table-bg-color-primary-80 .elementor-widget-container {
+  background-color: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+.table-bg-color-primary-60 {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary) !important;
+    opacity: 0.6;
+  }
+}
+
+.table-bg-color-primary-60 .elementor-widget-container {
+  background-color: transparent !important;
+  position: relative;
+  z-index: 2;
+}
+
+.er-help-category-nav .e-filter .e-filter-item[aria-pressed="true"] {
+  box-shadow: 0px -2px 0px 0px var(--color-primary) inset !important;
+}
+
+.single-microsite {
+
+  a {
+    color: var(--color-primary);
+  }
+}
+
+.er-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.nodisplay {
+  display: none !important;
+}
+
+.er-dropdown {
+  display: inline-flex;
+  position: relative;
+  min-width: 250px;
+
+  .er-dropdown-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.5rem !important;
+    background: var(--color-primary);
+    color: #fff;
+    line-height: 1.5rem;
+    cursor: pointer;
+    font-family: 'Avant Garde', sans-serif !important;
+  }
+
+  .er-dropdown-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    display: none;
+
+    a {
+      padding: 0.5rem;
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'Avant Garde', sans-serif !important;
+      
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &:hover {
+    .er-dropdown-dropdown {
+      display: block;
+    }
+  }
+}
+
+.er-help-center-search-button, .er-online-partner-search-button {
+  background: var(--color-primary) !important;
+}
+
+.er-locations__mode-toggle-button {
+  color: #191919BF !important;
+}
+
+.er-locations__mode-toggle-button.active {
+    color: var(--e-global-color-primary) !important;
+    border-bottom: 2px solid var(--e-global-color-primary);
+}
+
+.er-microsite-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.25em;
+    font-weight: 500;
+    padding: 1.5rem !important;
+    background: var(--color-primary);
+    color: #fff;
+    line-height: 1.5rem;
+    cursor: pointer;
+    font-family: "Avant Garde", sans-serif !important;
+    min-width: 200px;
+  }
+}
+
+.er-dealer-downloads {
+
+  ul {
+    padding: 0;
+    margin: 0 0 2rem 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      padding-block: 1rem;
+      margin: 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  h4 {
+    margin-bottom: 2rem;
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+  }
+
+  .er-dealer-download-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  svg {
+    width: auto;
+    height: 2rem;
+    fill: var(--color-primary);
+  }
+
+  a {
+    color: #191919;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Avant Garde', sans-serif !important;
+    display: inline-flex;
+    align-items: center;
+    line-height: 2rem;
+    gap: 0.5rem;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

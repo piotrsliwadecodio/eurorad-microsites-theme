@@ -1,0 +1,155 @@
+.microsite-template {
+  #lur_main_layout {
+    font-family: AvantGarde, sans-serif;
+  }
+  #lur_main_layout .switch.opt-yes {
+    background: var(--color-primary);
+  }
+
+  #lur_main_layout #lur_ersparnis_proz,
+  #lur_main_layout .ersparnis .first.half strong,
+  #lur_ersparnis_proz {
+    color: var(--color-primary);
+  }
+
+  #lur_main_layout .luf_footer_strong,
+  #lur_main_layout .lur_footer strong {
+    font-family: inherit !important;
+  }
+
+  #lur_main_layout .whiterow .info {
+    padding: 20px 10px;
+  }
+
+  #lur_main_layout #show-tables {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    background: var(--color-primary);
+    color: #fff;
+    line-height: 1.5rem;
+    cursor: pointer;
+    font-family: 'Avant Garde', sans-serif !important;
+    margin: 16px 0;
+  }
+
+  #lur_main_layout {
+
+    td,
+    th,
+    .lur_footer,
+    .lur_footer_1,
+    .lur_content_container,
+    .lur_content_row_add, 
+    .lur_content_row_bike  {
+      background: transparent;
+      border: 0;
+    }
+
+    input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+      padding: 0.5rem 1rem;
+      background-color: #fff;
+      border: 1px solid #EFEFEF;
+      height: auto;
+      font-size: 16px;
+    }
+
+    .currency_field_symbol {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    .lur_content_heading {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      background-color: #F0F7F2;
+      padding: 2rem;
+      font-weight: normal;
+      color: #000;
+    }
+
+    .lur_content_container {
+      padding: 2rem;
+      border: 1px solid #EFEFEF;
+    }
+
+    .lur_content_row_bike .lur_content_col {
+      vertical-align: middle;
+    }
+    #lur_content_ebike td {
+      padding-bottom: 1rem;
+    }
+
+    .lur_add_bike {
+      padding: 0.5rem;
+      background-color: var(--color-primary);
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #leasingRow {
+      padding-top: 1rem;
+    }
+
+    .row2018,
+    .leasingRow,
+    .versRow,
+    .employersshare-minus,
+    .employersshare-plus {
+
+      td {
+        background-color: #F0F7F2;
+        padding: 2rem;
+        border: 1px solid #EFEFEF;
+      }
+    }
+
+    .employersshare-minus + tr,
+    .employersshare-minus + tr + tr,
+    .employersshare-minus + tr + tr + tr {
+      td {
+        background-color: #F0F7F2;
+        padding: 2rem;
+        border: 1px solid #EFEFEF;
+      }
+    }
+
+    .lur_content_div>td {
+      padding-block: 0.5rem;
+    }
+    #lur_content_kinder td,
+    #lur_content_anzkinder td {
+      padding-bottom: 1rem;
+    }
+  }
+
+  #calculation-tables {
+    td,
+    th {
+      background: transparent;
+      border: 0 !important;
+    }
+    thead tr th {
+      background-color: #F0F7F2 !important;
+      padding: 1rem;
+      border: 1px solid #EFEFEF;
+    }
+
+    tbody tr td {
+      padding: 1rem;
+      border: 1px solid #EFEFEF;
+    }
+    tr.result td {
+      font-weight: 600;
+    }
+  }
+}

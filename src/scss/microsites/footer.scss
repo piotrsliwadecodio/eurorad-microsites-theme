@@ -1,0 +1,86 @@
+.er-microsite-footer {
+  border-top: 1rem solid var(--color-primary);
+  background: #ffffff;
+  padding-inline: 1.5rem;
+
+  &-main {
+    padding-block: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-black) !important;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .er-microsite-footer-left { 
+    width: calc(66.666% - 0.5rem);
+    @media (max-width: 768px) {
+       width: 100%;
+    }
+  }
+  .er-microsite-footer-right { 
+    width: calc(33.333% - 0.5rem);
+    @media (max-width: 768px) {
+       width: 100%;
+    }
+  }
+  .er-microsite-footer-menu { 
+    width: 100%;
+  }
+
+  .er-microsite-footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding-top: 0;
+
+      span {
+        display: none;
+      }
+    }
+
+    a {
+      padding-inline: 0.5rem;
+      text-transform: uppercase;
+
+      @media (max-width: 768px) {
+        padding-inline: 0;
+      }
+    }
+
+    li:last-child {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .er-header {
+    font-size: 2.25rem;
+    font-family: 'Avant Garde', sans-serif !important;
+    
+    > * {
+      margin: 0;
+    }
+  }
+
+  .er-dropdown {
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,51 @@
+.er-table {
+  overflow: auto;
+  border: 1px solid var(--er-color-color-light-blue);
+  border-radius: 0.5rem;
+
+  table {
+    font-size: 1.25rem;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    td,
+    th {
+      border-left: 0;
+      border-right: 0;
+      background: transparent !important;
+      text-align: left;
+      border-color: var(--er-color-color-light-blue) !important;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+
+      }
+    }
+
+    thead {
+      td,
+      th {
+        background: var(--er-color-color-light-green) !important;
+        color: #628D6D;
+        border-top: 0 !important;
+      }
+    }
+
+    tbody tr:last-child {
+      td,
+      th {
+        border-bottom: 0 !important;
+      }
+    }
+  }
+}

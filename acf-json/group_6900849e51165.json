@@ -1,0 +1,306 @@
+{
+    "key": "group_6900849e51165",
+    "title": "Content Override Settings",
+    "fields": [
+        {
+            "key": "field_6901122e1d755",
+            "label": "Override Content",
+            "name": "override_content",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_690112811d757",
+            "label": "Override Type",
+            "name": "override_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "page": "Page",
+                "section": "Section"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_690084df18b62",
+            "label": "Override Master Page",
+            "name": "target_post_id",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Only select one of \"master\" microsites",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "page"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "microsite"
+            ],
+            "post_status": "",
+            "taxonomy": [
+                "microsite-type:master"
+            ],
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_692ed1d68e12b",
+            "label": "Override Mode",
+            "name": "override_mode",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "microsite": "Microsite(s)",
+                "microsite-type": "Microsite Type"
+            },
+            "default_value": "microsite",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_690084ac18b61",
+            "label": "Override Target Microsite(s)",
+            "name": "microsite_ids",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "page"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_692ed1d68e12b",
+                        "operator": "==",
+                        "value": "microsite"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "section"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_692ed1d68e12b",
+                        "operator": "==",
+                        "value": "microsite"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "microsite"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_692ed2458e12c",
+            "label": "Override Target Microsite Type(s)",
+            "name": "override_target_pages_types",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "page"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_692ed1d68e12b",
+                        "operator": "==",
+                        "value": "microsite-type"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "section"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_692ed1d68e12b",
+                        "operator": "==",
+                        "value": "microsite-type"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "microsite-type",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "checkbox",
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_690113a61d758",
+            "label": "Override Target Section ID",
+            "name": "override_target_section_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_690112811d757",
+                        "operator": "==",
+                        "value": "section"
+                    },
+                    {
+                        "field": "field_6901122e1d755",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "elementor_library"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1764758529
+}

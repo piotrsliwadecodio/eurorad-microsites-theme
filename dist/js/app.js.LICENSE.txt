@@ -1,0 +1,31 @@
+/*!
+                      * Merge two or more objects together.
+                      * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+                      * @param   {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
+                      * @param   {Object}   objects  The objects to merge together
+                      * @returns {Object}            Merged values of defaults and options
+                      *
+                      * Use the function as follows:
+                      * let shallowMerge = extend(obj1, obj2);
+                      * let deepMerge = extend(true, obj1, obj2)
+                      */
+
+/**
+             * @license React
+             * react.production.min.js
+             *
+             * Copyright (c) Facebook, Inc. and its affiliates.
+             *
+             * This source code is licensed under the MIT license found in the
+             * LICENSE file in the root directory of this source tree.
+             */
+
+/**
+    * @license React
+    * react-dom.production.min.js
+    *
+    * Copyright (c) Facebook, Inc. and its affiliates.
+    *
+    * This source code is licensed under the MIT license found in the
+    * LICENSE file in the root directory of this source tree.
+    */

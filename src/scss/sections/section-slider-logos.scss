@@ -1,0 +1,8 @@
+.er-slider {
+  width: 100%;
+
+  .swiper-wrapper{
+    -webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
+    position: relative;
+  }
+}

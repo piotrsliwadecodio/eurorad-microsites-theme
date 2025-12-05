@@ -1,0 +1,1795 @@
+{
+    "key": "group_5704ddaa34871",
+    "title": "Site Leasingrechner",
+    "fields": [
+        {
+            "key": "field_61952bcede08f",
+            "label": "Land",
+            "name": "calc_country",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "DE": "Deutschland",
+                "AT": "Österreich"
+            },
+            "default_value": [
+                "DE"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5975ec235a2f1",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_59087089edea8",
+            "label": "Bundesland Voreinstellung",
+            "name": "federal_state",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "BW": "Baden-Württemberg",
+                "BAYERN": "Bayern",
+                "BERLIN": "Berlin",
+                "BRANDENBURG": "Brandenburg",
+                "BREMEN": "Bremen",
+                "HH": "Hamburg",
+                "HESSEN": "Hessen",
+                "MECKLENBURG": "Mecklenburg-Vorpommern",
+                "NIEDERSACHSEN": "Niedersachsen",
+                "NRW": "Nordrhein-Westfalen",
+                "RP": "Rheinland-Pfalz",
+                "SAARLAND": "Saarland",
+                "SACHSEN": "Sachsen",
+                "SA": "Sachsen-Anhalt",
+                "SH": "Schleswig-Holstein",
+                "TH": "Thüringe"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5975ecb45f864",
+            "label": "AG Zuschuss Erläuterung Allgemein",
+            "name": "ag_zuschuss_erlauterung",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_61952c12de090",
+            "label": "AG Zuschuss Erläuterung",
+            "name": "ag_zuschuss_erlauterung_at",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_621391d640383",
+            "label": "KV-Zusatzbeitrag Erläuterung",
+            "name": "kv_erlauterung",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6213919f40382",
+            "label": "Vorsteuerabzugsberechtigung Erläuterung",
+            "name": "ust_erlauterung",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_62139b190190c",
+            "label": "Geviertelter Bruttolistenpreis",
+            "name": "quarter_price_erlauterung",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_59ce37feb0bbe",
+            "label": "Detailrechnung Arbeitgeberzuschuss Bezeichnung",
+            "name": "ag_zuschuss_detailcalc_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5975ec585f863",
+            "label": "Ersparnis Sternchen",
+            "name": "ersparnis_sternchen",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5975ebbd16a42",
+            "label": "Bikes",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_5704dde0a958a",
+            "label": "Bikeswitch",
+            "name": "bikeswitch",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "nein",
+                "ja"
+            ],
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b6774b6408f",
+            "label": "Anzahl leasebare Bikes",
+            "name": "max-bikes",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": "",
+            "step": 1,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_58e50a842afb3",
+            "label": "Preis Untergrenze",
+            "name": "preis_untergrenze",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "keine",
+                "wie Bikefilter"
+            ],
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_571f1e124e188",
+            "label": "Berechnung",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_63108268051b1",
+            "label": "Rechner Version",
+            "name": "calc_version",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "V1": "V1",
+                "V2": "V2"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fbce74e7ab9c",
+            "label": "Option Verbeamtet",
+            "name": "opt_beamte",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "zeigt den Schalter \"sind Sie verbeamtet?\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "nein",
+                "ja"
+            ],
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5704ddeaa958b",
+            "label": "vorsteuerabzugsberechtigt",
+            "name": "ust",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "0": "abzugsberechtigt",
+                "1": "nicht abszugsberechtigt",
+                "3": "Auswahl"
+            },
+            "default_value": [
+                0
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61952cbede091",
+            "label": "vorsteuerabzugsberechtigt",
+            "name": "ust_at",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "abzugsberechtigt",
+                "0": "nicht abszugsberechtigt"
+            },
+            "default_value": [
+                1
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5704ddc637783",
+            "label": "Alternative Berechnung",
+            "name": "calctype",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "nein",
+                "ja",
+                "ja - kau",
+                "ja - für Beamte"
+            ],
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6863f88c67a2c",
+            "label": "KV-Zusatzbeitrag",
+            "name": "kv_addition",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_58b6777e64090",
+            "label": "Verfügbare Versicherungsprämien",
+            "name": "verspraemien",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "basis": "Basis",
+                "premium": "Premium",
+                "alt": "Alte Konditionen",
+                "premiumPlus": "PremiumPLUS",
+                "premiumPlusOV": "PremiumPLUS Ohne Verschleiß"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 0,
+            "return_format": "array",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_59197b60682b0",
+            "label": "Versicherungsprämie",
+            "name": "insurance",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_59197b74682b1",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Eintrag hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_59197b74682b1",
+                    "label": "Paketname",
+                    "name": "paketname",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0,
+                    "parent_repeater": "field_59197b60682b0"
+                },
+                {
+                    "key": "field_59197b78682b2",
+                    "label": "Stufen",
+                    "name": "steps",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Eintrag hinzufügen",
+                    "sub_fields": [
+                        {
+                            "key": "field_59197b86682b3",
+                            "label": "Preis bis",
+                            "name": "upto",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "readonly": 0,
+                            "disabled": 0,
+                            "parent_repeater": "field_59197b78682b2"
+                        },
+                        {
+                            "key": "field_59197b8e682b4",
+                            "label": "Versicherungsprämie",
+                            "name": "verspraemie",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "readonly": 0,
+                            "disabled": 0,
+                            "parent_repeater": "field_59197b78682b2"
+                        }
+                    ],
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_59197b60682b0"
+                },
+                {
+                    "key": "field_62ff6bb4b0116",
+                    "label": "Leasingfaktor (noch nicht aktiviert)",
+                    "name": "leasingfactor",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_62ff6bd3b0117",
+                            "label": "Preis bis",
+                            "name": "upto",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "parent_repeater": "field_62ff6bb4b0116"
+                        },
+                        {
+                            "key": "field_62ff6bdcb0118",
+                            "label": "Faktor",
+                            "name": "factor",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "parent_repeater": "field_62ff6bb4b0116"
+                        }
+                    ],
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_59197b60682b0"
+                },
+                {
+                    "key": "field_62ff6c0ab0119",
+                    "label": "Preis Obergrenze",
+                    "name": "maxbikeprice",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "parent_repeater": "field_59197b60682b0"
+                }
+            ],
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_59197aeb682ab",
+            "label": "Leasing Faktor",
+            "name": "leasing_factor",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Eintrag hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_59197b15682ac",
+                    "label": "Paketname",
+                    "name": "paketname",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0,
+                    "parent_repeater": "field_59197aeb682ab"
+                },
+                {
+                    "key": "field_59197b23682ad",
+                    "label": "Stufen",
+                    "name": "steps",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "Eintrag hinzufügen",
+                    "sub_fields": [
+                        {
+                            "key": "field_59197b38682ae",
+                            "label": "Bis Preis",
+                            "name": "upto",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "readonly": 0,
+                            "disabled": 0,
+                            "parent_repeater": "field_59197b23682ad"
+                        },
+                        {
+                            "key": "field_59197b46682af",
+                            "label": "Faktor",
+                            "name": "factor",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "readonly": 0,
+                            "disabled": 0,
+                            "parent_repeater": "field_59197b23682ad"
+                        }
+                    ],
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_59197aeb682ab"
+                }
+            ],
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_59ce704f276a6",
+            "label": "Umsatzsteuer abziehen",
+            "name": "subtract_tax_after_employershare",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Umsatzsteuer auf den Sachbezug nach AG-Zuschuss abziehen",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_66543d53204e9",
+            "label": "Mehrwertsteuer auf die Versicherungsprämie entfällt",
+            "name": "no_tax_on_insurance",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_611bf2f29eaa3",
+            "label": "Vollen UVP statt geviertelter für Sachbezug",
+            "name": "use_full_bike_uvp",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5975eb76612ec",
+            "label": "Arbeitgeberanteil",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_663b5c9e1f209",
+            "label": "Arbeitgeberzuschussabzüge in Ergebnis anzeigen",
+            "name": "subtract_employersshare_in_result",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Wenn eingeschaltet, wird in den Ergebniszeilen \"monatliche Gesamtleasingrate\" der Arbeitgeberzuschuss abgezogen",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5704ddb3c47ec",
+            "label": "Arbeitgeberanteil",
+            "name": "employersshare",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "nein",
+                "je Paket",
+                "fester Wert",
+                "Prozentwert der monatlichen Leasingrate",
+                "Prozentwert der Versicherung",
+                "Prozentwert des Brutto Bike-Gesamtpreises",
+                "frei wählbar",
+                "dropdown",
+                "Prozentwert Versicherung UND Prozentwert Leasingrate"
+            ],
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5707d3a0839b9",
+            "label": "Arbeitgeberanteil Wert",
+            "name": "employersshare_value",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "3"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "4"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "5"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "6"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "8"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_6627d0a8f804e",
+            "label": "Arbeitgeberanteil Wert 2",
+            "name": "employersshare_value_2",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Bei Option \"Prozentwert Versicherung UND Prozentwert Leasingrate\" hier den Prozentwert für die Leasingrate eintragen",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "8"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_65e5e36f8c2bd",
+            "label": "Arbeitgeberanteil Zusätzlich",
+            "name": "employersshare_additional",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_65e5e36f8c2be",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Wert hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_65e5e36f8c2be",
+                    "label": "Titel",
+                    "name": "titel",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_65e5e36f8c2bd"
+                },
+                {
+                    "key": "field_65e5e36f8c2bf",
+                    "label": "Wert",
+                    "name": "wert",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "parent_repeater": "field_65e5e36f8c2bd"
+                },
+                {
+                    "key": "field_65e5e3888c2c0",
+                    "label": "Editierbar",
+                    "name": "editierbar",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "ja",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_65e5e36f8c2bd"
+                }
+            ],
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_64b8f06ad6e94",
+            "label": "Dropdown Zeilen",
+            "name": "employersshare_dropdown",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "7"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "field_64b8f0b6d6e96",
+            "button_label": "Eintrag hinzufügen",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64b8f0b6d6e96",
+                    "label": "Titel",
+                    "name": "titel",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64b8f06ad6e94"
+                },
+                {
+                    "key": "field_64b8f09bd6e95",
+                    "label": "Wert",
+                    "name": "wert",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64b8f06ad6e94"
+                }
+            ]
+        },
+        {
+            "key": "field_58c1185e85c87",
+            "label": "Arbeitgeberanteil Betrag je Paket",
+            "name": "agzuschuss_je_paket",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": ""
+                    },
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5704ddb3c47ec",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Eintrag hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_58c1186385c88",
+                    "label": "Paket",
+                    "name": "paket",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "premium": "Premium",
+                        "basis": "Basis",
+                        "alt": "Alte Konditionen",
+                        "premiumPlus": "PremiumPLUS"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_58c1185e85c87"
+                },
+                {
+                    "key": "field_58c1187185c89",
+                    "label": "Betrag",
+                    "name": "betrag",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "readonly": 0,
+                    "disabled": 0,
+                    "parent_repeater": "field_58c1185e85c87"
+                }
+            ],
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_5705073494b1b",
+            "label": "Internetpauschale (monatlich)",
+            "name": "leasing_contribution_internet",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5705075794b1c",
+            "label": "Handykostenzuschuss (monatlich)",
+            "name": "leasing_contribution_phone",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5705070694b1a",
+            "label": "Werbeflächenzuschuss (monatlich)",
+            "name": "leasing_contribution_advertising",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5d0c8a9de5f4a",
+            "label": "Arbeitgeberanteil gilt für bis zu __ Bikes",
+            "name": "employersshare_bike_count",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "DE"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_68230954fee5f",
+            "label": "Arbeitgeber Zuschuss gilt für je Bike oder für alle",
+            "name": "employersshare_multiply",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "je bike",
+                "0": "für alle zusammen"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6835c3b9cdb9d",
+            "label": "Zeile Arbeitgeberzuschuss in Berechnung ausblenden",
+            "name": "hide_row_employerBenefit",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61952ea2de094",
+            "label": "Felder ausblenden",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_61952eaede095",
+            "label": "Feld Leasingdauer ausblenden",
+            "name": "hide_field_leasingperiod",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61952ec4de096",
+            "label": "Feld Arbeitgeberzuschuss ausblenden",
+            "name": "hide_field_employerBenefit",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61952ed9de098",
+            "label": "Feld Vorsteuerabzugsberechtigung ausblenden",
+            "name": "hide_field_employerTaxDeduction",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61952bcede08f",
+                        "operator": "==",
+                        "value": "AT"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "microsite"
+            }
+        ]
+    ],
+    "menu_order": 7,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1761604195
+}

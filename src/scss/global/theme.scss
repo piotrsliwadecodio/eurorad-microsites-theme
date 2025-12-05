@@ -1,0 +1,52 @@
+body {
+  overflow-x: hidden;
+
+  --er-color-primary: var(--er-color-color-primary);
+  --er-color-secondary: var(--er-color-color-secondary);
+  --er-color-text: #080844B3;
+  --er-color-color-accent: #2A7BE4;
+  --er-color-color-primary-blue: #0057B8;
+  --er-color-color-black: #222222;
+  --er-color-color-white: #FFFFFF;
+  --er-color-color-white-transparent: #FFFFFF4D;
+  --er-color-color-black-transaprent: #2222224D;
+  --er-color-color-light-green: #F0F7F2;
+  --er-color-color-light-blue: #E1E9EF;
+  --er-color-color-accent-blue: #2A7BE4;
+  --er-color-color-accent-green: #3BB273;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.elementor-image-gallery .gallery-item {
+  @media (max-width: 480px) {
+    max-width: 33.3333% !important;
+  }  
+}
+
+.er-button-justify .elementor-button-content-wrapper {
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.er-accordion-nav {
+  button {
+    color: var(--er-color-text);
+    border: 0;
+    background: transparent !important;
+
+    &.active {
+      border-bottom: 2px solid var(--e-global-color-primary);
+    }
+  }
+}
+
+.er-slider-hero {
+  width: 100% !important;
+
+  .swiper-pagination {
+    bottom: 30px !important;
+  }
+}
