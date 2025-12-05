@@ -1131,6 +1131,173 @@ function multisite_template_override( $template ) {
 add_filter( 'template_include', 'multisite_template_override', 1 );
 
 /**
+ * PHASE 1: ADD THIS CODE TO inc/microsites/microsites.php
+ * 
+ * Add this AFTER the multisite_template_override() function
+ * (around line 900, after the template_include filter)
+ */
+
+/**
+ * Setup microsite post context early for proper Elementor asset loading
+ * 
+ * This function runs at the 'wp' hook (priority 5), which is AFTER WordPress
+ * resolves the query but BEFORE wp_enqueue_scripts fires (priority 10).
+ * 
+ * Why this is critical:
+ * - Elementor decides which CSS/JS to load during wp_enqueue_scripts
+ * - It checks $wp_query->post to determine the post ID
+ * - Our template_include override happens too late (after assets are enqueued)
+ * - By setting the correct post here, Elementor loads the right assets
+ * 
+ * @since 2.0.0
+ */
+add_action('wp', 'er_setup_microsite_post_context', 5);
+function er_setup_microsite_post_context() {
+    // Skip if Elementor editor is active
+    if (function_exists('is_elementor_active') && is_elementor_active()) {
+        return;
+    }
+    
+    if (isset($_GET['elementor-preview'])) {
+        return;
+    }
+    
+    // Skip if in admin
+    if (is_admin()) {
+        return;
+    }
+    
+    global $wp_query, $microsite_context;
+    
+    // Get microsite context (cached from parse_request)
+    $context = $microsite_context ?? get_microsite_context();
+    
+    // Not a microsite - exit early
+    if (!$context['is_microsite']) {
+        return;
+    }
+    
+    $microsite_id = $context['microsite_id'];
+    $subpage_slug = $context['subpage_slug'];
+    
+    // Determine target post ID using same logic as template_include
+    $target_post_id = false;
+    
+    if (is_master_microsite($microsite_id)) {
+        // Master microsite - use itself as target
+        $target_post_id = $microsite_id;
+    } else {
+        if (empty($subpage_slug)) {
+            // Homepage - use microsite master or fallback to microsite itself
+            $microsite_master = get_field('microsite_master', 'option');
+            $target_post_id = $microsite_master ? $microsite_master : $microsite_id;
+        } else {
+            // Subpage - lookup by slug
+            $target_post_id = get_microsite_id_by_slug($subpage_slug);
+            
+            if (!$target_post_id) {
+                // Try last segment only (for nested paths like /ebm/about/team)
+                $path_segments = explode('/', $subpage_slug);
+                $last_segment = end($path_segments);
+                $target_post_id = get_microsite_id_by_slug($last_segment);
+            }
+            
+            // If still no subpage found, return early (404 will be handled later)
+            if (!$target_post_id) {
+                return;
+            }
+        }
+    }
+    
+    // Check for Elementor template override (differ page)
+    if (function_exists('get_differ_page')) {
+        $deffer_page = get_differ_page($microsite_id, $target_post_id);
+        if ($deffer_page) {
+            $target_post_id = $deffer_page;
+        }
+    }
+    
+    // Load the post
+    $post = get_post($target_post_id);
+    if (!$post) {
+        return;
+    }
+    
+    // CRITICAL: Set post in global query EARLY
+    // This ensures Elementor sees the correct post during wp_enqueue_scripts
+    $wp_query->post = $post;
+    $wp_query->posts = array($post);
+    $wp_query->queried_object = $post;
+    $wp_query->queried_object_id = $post->ID;
+    $wp_query->post_count = 1;
+    $wp_query->is_single = true;
+    $wp_query->is_singular = true;
+    $wp_query->is_page = false;
+    $wp_query->is_404 = false;
+    $wp_query->is_home = ($target_post_id == get_field('microsite_master', 'option'));
+    
+    // Set post type to microsite
+    $wp_query->queried_object->post_type = 'microsite';
+    
+    setup_postdata($post);
+    
+    // Store target post ID globally for use in template_include
+    // This avoids duplicate logic
+    global $er_microsite_post_id;
+    $er_microsite_post_id = $target_post_id;
+    
+    // Temporary debug logging (will be removed in Phase 6)
+    if (defined('WP_DEBUG') && WP_DEBUG && isset($_GET['debug_assets'])) {
+        error_log('=== Microsite Post Context Setup (wp hook) ===');
+        error_log('Microsite ID: ' . $microsite_id);
+        error_log('Target Post ID: ' . $target_post_id);
+        error_log('Post Title: ' . $post->post_title);
+        error_log('Post Type: ' . $post->post_type);
+        error_log('Queried Object ID: ' . $wp_query->queried_object_id);
+        error_log('Detection Method: ' . $context['detection_method']);
+    }
+}
+
+/**
+ * PHASE 3: Temporary diagnostic logging for asset enqueueing
+ * This helps verify Elementor sees the correct post
+ * Will be removed in Phase 6
+ */
+if (defined('WP_DEBUG') && WP_DEBUG) {
+    add_action('wp_enqueue_scripts', function() {
+        if (!isset($_GET['debug_assets'])) {
+            return;
+        }
+        
+        global $wp_query;
+        
+        error_log('=== wp_enqueue_scripts fired ===');
+        error_log('Current Post ID: ' . ($wp_query->post->ID ?? 'none'));
+        error_log('Current Post Title: ' . ($wp_query->post->post_title ?? 'none'));
+        error_log('Queried Object ID: ' . ($wp_query->queried_object_id ?? 'none'));
+        error_log('Is Singular: ' . ($wp_query->is_singular ? 'yes' : 'no'));
+        
+        // Check if Elementor CSS is registered
+        global $wp_styles;
+        $elementor_styles = array();
+        foreach ($wp_styles->registered as $handle => $style) {
+            if (strpos($handle, 'elementor') !== false || strpos($handle, 'post-') !== false) {
+                $elementor_styles[] = $handle . ' => ' . $style->src;
+            }
+        }
+        
+        if (!empty($elementor_styles)) {
+            error_log('Registered Elementor styles:');
+            foreach ($elementor_styles as $style_info) {
+                error_log('  - ' . $style_info);
+            }
+        } else {
+            error_log('WARNING: No Elementor styles registered yet');
+        }
+    }, 5); // Priority 5 - runs early to catch initial registration
+}
+
+/**
  * Clear conflicting query vars for Elementor editor
  * This ensures microsite query vars don't interfere with Elementor
  * Works for: pages, posts, microsites, elementor_library
